@@ -1,16 +1,19 @@
-const mimi = {
-  name: 'Alphonce Mobutu',
-  age: 24,
-  ethnicity: 'Luo',
-};
+// Synchronous Programming
+const http = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+console.log(http)
 
-const xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-  if (this.readyState === 4 && this.status === 200) {
-    // Typical action to be performed when the document is ready:
-    // document.getElementById('demo').innerHTML = xhttp.responseText;
-    console.log(xhttp.responseText);
-  }
-};
-xhttp.open('GET', 'mimi.json', true);
-xhttp.send();
+// http
+//   .then((response) => response.json())
+//   .then((kula) => {
+//     console.log(kula[0].name);
+//   });
+
+const req = 'https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json';
+
+fetch(req)
+  .then((response) => response.json())
+  .then((oooh) => {
+    console.log(oooh[0].name)
+  })
+
+console.log('Started request');
