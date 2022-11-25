@@ -1,0 +1,16 @@
+{
+  "people": [
+    {
+      "name": "Alphonce Mobutu",
+      "age": 23
+    },
+    {
+      "name": "Ronald Reagan",
+      "age": 24
+    },
+    {
+      "name": "Sopy Apondi",
+      "age": 18
+    }
+  ]
+}
