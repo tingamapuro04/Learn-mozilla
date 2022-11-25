@@ -28,14 +28,20 @@
 
 
 
-const fetchPromise1 = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
-const fetchPromise2 = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/not-found');
-const fetchPromise3 = fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json');
+// Async await programming
 
-Promise.any([fetchPromise2, fetchPromise3, fetchPromise1])
-  .then((responses) => {
-    console.log(`${responses.url}: ${responses.status}`);
-  })
-  .catch((error) => {
-    console.error(`Failed to fetch: ${error}`);
-  })
+async function trying() {
+  try {
+    const red = 'https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json';
+    const response = await fetch(red);
+    if (!response.ok) {
+      throw new Error(`${response.status}`);
+    }
+    const jj = await response.json();
+    console.log(jj[0].name);
+  } catch (error) {
+    console.error(`Could not get the products: ${error}`);
+  }
+}
+
+trying();
