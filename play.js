@@ -10,7 +10,6 @@ let male = 0;
 const requestUrl = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
 
 function displayInfo(data) {
-  console.log(data);
   const kittenObj = JSON.parse(data);
   const names = [];
   kittenObj.forEach((element) => {
