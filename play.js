@@ -15,12 +15,6 @@ function displayInfo(data) {
   const names = [];
   kittenObj.forEach((element) => {
     NoOfKittens += element.kittens.length;
-    // if (element.kittens.gender === 'm') {
-    //   male += 1;
-    // } else {
-    //   female += 1;
-    // }
-
     element.kittens.forEach((kitt) => {
       if (kitt.gender === 'f') {
         female += 1;
