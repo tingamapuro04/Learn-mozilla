@@ -63,7 +63,9 @@ const alarm = (person, delay) => new Promise((resolve) => {
 
 const amsha = () => {
   alarm(name.value, delay.value)
+    // eslint-disable-next-line no-return-assign
     .then((message) => output.textContent = message)
-    .catch((error) => output.textContent = `Your alarm couldn't be set: ${error}`)
+    // eslint-disable-next-line no-return-assign
+    .catch((error) => output.textContent = `Your alarm couldn't be set: ${error}`);
 };
 btn.addEventListener('click', amsha);
