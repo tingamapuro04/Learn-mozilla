@@ -3,3 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  text-align: center;
+}
+
+.omejo {
+  border: 10px solid green;
+  background-color: rgba(167, 175, 231, 0.693);
+}
+
+img {
+  transform: translateX(300px);
+}
