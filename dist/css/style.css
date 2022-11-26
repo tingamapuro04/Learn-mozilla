@@ -4,15 +4,27 @@
   box-sizing: border-box;
 }
 
-body {
-  text-align: center;
-}
-
 .omejo {
   border: 10px solid green;
   background-color: rgba(167, 175, 231, 0.693);
 }
 
 img {
-  transform: translateX(300px);
+  transform: translateX(300%);
+}
+
+#btn {
+  background: #369;
+  padding: 8px;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  transition: 2s;
+}
+
+#btn:hover {
+  background: green;
+  color: red;
+  transform: rotateZ(360deg);
 }/*# sourceMappingURL=style.css.map */
