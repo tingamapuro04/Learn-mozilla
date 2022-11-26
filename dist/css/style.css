@@ -20,7 +20,7 @@ img {
   border-radius: 4px;
   font-size: 2rem;
   margin-bottom: 2rem;
-  transition: 2s;
+  transition: 2s ease-in-out;
 }
 
 #btn:hover {
