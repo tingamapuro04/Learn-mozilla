@@ -45,25 +45,27 @@
 // trying();
 
 // Alarm API
-const btn = document.querySelector('#set-alarm');
-const output = document.querySelector('#demo');
-const name = document.querySelector('#name');
-const delay = document.querySelector('#delay');
 
-const alarm = (person, delay) => new Promise((resolve) => {
-  if (delay < 0) {
-    throw new Error('Time can never be negative');
-  }
-  setTimeout(() => {
-    resolve(`Wake up ${person}`);
-  }, delay);
-});
 
-const amsha = () => {
-  alarm(name.value, delay.value)
-    // eslint-disable-next-line no-return-assign
-    .then((message) => output.textContent = message)
-    // eslint-disable-next-line no-return-assign
-    .catch((error) => output.textContent = `Your alarm couldn't be set: ${error}`);
-};
-btn.addEventListener('click', amsha);
+// const btn = document.querySelector('#set-alarm');
+// const output = document.querySelector('#demo');
+// const name = document.querySelector('#name');
+// const delay = document.querySelector('#delay');
+
+// const alarm = (person, delay) => new Promise((resolve) => {
+//   if (delay < 0) {
+//     throw new Error('Time can never be negative');
+//   }
+//   setTimeout(() => {
+//     resolve(`Wake up ${person}`);
+//   }, delay);
+// });
+
+// const amsha = () => {
+//   alarm(name.value, delay.value)
+//     // eslint-disable-next-line no-return-assign
+//     .then((message) => output.textContent = message)
+//     // eslint-disable-next-line no-return-assign
+//     .catch((error) => output.textContent = `Your alarm couldn't be set: ${error}`);
+// };
+// btn.addEventListener('click', amsha);

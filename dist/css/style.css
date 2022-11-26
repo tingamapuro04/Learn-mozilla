@@ -2,15 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  width: 100vw;
+}
+
+body {
+  height: 100vh;
 }
 
 .omejo {
   border: 10px solid green;
   background-color: rgba(167, 175, 231, 0.693);
-}
-
-img {
-  transform: translateX(300%);
 }
 
 #btn {
@@ -27,4 +28,43 @@ img {
   background: green;
   color: red;
   transform: rotateZ(360deg);
+}
+
+.sky {
+  height: 30vh;
+  background: skyblue;
+}
+
+.grass {
+  height: 30vh;
+  background: green;
+}
+
+.road {
+  height: 25vh;
+  background: darkgray;
+}
+
+.road {
+  position: relative;
+}
+
+.bike {
+  width: 100px;
+  position: absolute;
+  top: 25%;
+  left: 10px;
+  animation-name: drive;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes drive {
+  from {
+    transform: translateX(-100px) scale(1);
+  }
+  to {
+    transform: translateX(100vw) scale(2);
+  }
 }/*# sourceMappingURL=style.css.map */
