@@ -47,4 +47,21 @@
 // trying();
 
 // Alarm API
+const btn = document.querySelector('#set-alarm');
+let output = document.querySelector('#demo');
 
+const alarm = (person, delay) => new Promise((resolve, reject) => {
+  if (delay < 0) {
+    throw new Error('Time can never be negative');
+  }
+  setTimeout(() => {
+    resolve(`Wake up ${person}`);
+  }, 3000);
+});
+
+const amsha = () => {
+  setTimeout(() => {
+    output.textContent = 'please just wake up now. I am tired of ringing!!!';
+  }, 4000);
+};
+btn.addEventListener('click', amsha);
