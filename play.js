@@ -26,8 +26,6 @@
 
 // console.log('Started request');
 
-
-
 // Async await programming
 
 // async function trying() {
