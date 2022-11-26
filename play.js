@@ -30,18 +30,21 @@
 
 // Async await programming
 
-async function trying() {
-  try {
-    const red = 'https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json';
-    const response = await fetch(red);
-    if (!response.ok) {
-      throw new Error(`${response.status}`);
-    }
-    const jj = await response.json();
-    console.log(jj[0].name);
-  } catch (error) {
-    console.error(`Could not get the products: ${error}`);
-  }
-}
+// async function trying() {
+//   try {
+//     const red = 'https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json';
+//     const response = await fetch(red);
+//     if (!response.ok) {
+//       throw new Error(`${response.status}`);
+//     }
+//     const jj = await response.json();
+//     console.log(jj[0].name);
+//   } catch (error) {
+//     console.error(`Could not get the products: ${error}`);
+//   }
+// }
 
-trying();
+// trying();
+
+// Alarm API
+
