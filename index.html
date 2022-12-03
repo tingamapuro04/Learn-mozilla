@@ -5,15 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Playing</title>
+  <link rel="stylesheet" href="/dist/css/style.css">
 </head>
 <body>
-  <section>
-    Hello
+  <div class="audio">
+    <audio id="music" src="/audios/mbosso.mp3">Hii ni miondoko</audio>
+    <button id="pause">Pause</button>
+    <input type="range" name="" id="atam" min="1" max="10" step="1">
+  </div>
+
+  <div class="sky"></div>
+  <div class="grass"></div>
+  <div class="road">
+    <div class="lines"></div>
+    <img src="/images/mario.png" alt="Bike man" class="bike">
+    <img src="/images/luigi.png" alt="luigi bike" class="luigi">
+  </div>
+  
+  <!-- <section>
     <input type="text" name="name" id="name">
     <input type="number" name="delay" id="delay">
     <button id="set-alarm">Set Alarm</button>
     <p id="demo"></p>
-  </section>
+  </section> -->
   <script src="play.js"></script>
 </body>
 </html>

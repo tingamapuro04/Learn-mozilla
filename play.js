@@ -45,25 +45,56 @@
 // trying();
 
 // Alarm API
-const btn = document.querySelector('#set-alarm');
-const output = document.querySelector('#demo');
-const name = document.querySelector('#name');
-const delay = document.querySelector('#delay');
 
-const alarm = (person, delay) => new Promise((resolve) => {
-  if (delay < 0) {
-    throw new Error('Time can never be negative');
+
+// const btn = document.querySelector('#set-alarm');
+// const output = document.querySelector('#demo');
+// const name = document.querySelector('#name');
+// const delay = document.querySelector('#delay');
+
+// const alarm = (person, delay) => new Promise((resolve) => {
+//   if (delay < 0) {
+//     throw new Error('Time can never be negative');
+//   }
+//   setTimeout(() => {
+//     resolve(`Wake up ${person}`);
+//   }, delay);
+// });
+
+// const amsha = () => {
+//   alarm(name.value, delay.value)
+//     // eslint-disable-next-line no-return-assign
+//     .then((message) => output.textContent = message)
+//     // eslint-disable-next-line no-return-assign
+//     .catch((error) => output.textContent = `Your alarm couldn't be set: ${error}`);
+// };
+// btn.addEventListener('click', amsha);
+
+// const audioContext = window.audioContext || window.webkitAudioContext;
+const ngoma = new AudioContext();
+const btn = document.querySelector('#pause');
+const music = document.querySelector('#music');
+const audioSource = ngoma.createMediaElementSource(music);
+
+btn.addEventListener('click', () => {
+  if (ngoma.state === 'suspended') {
+    ngoma.resume();
   }
-  setTimeout(() => {
-    resolve(`Wake up ${person}`);
-  }, delay);
+
+  if (btn.getAttribute('id') === 'pause') {
+    music.play();
+    btn.setAttribute('id', 'playing');
+    btn.textContent = 'Pause';
+  } else if (btn.getAttribute('id') === 'playing') {
+    music.pause();
+    btn.setAttribute('id', 'pause');
+    btn.textContent = 'Play';
+  }
 });
 
-const amsha = () => {
-  alarm(name.value, delay.value)
-    // eslint-disable-next-line no-return-assign
-    .then((message) => output.textContent = message)
-    // eslint-disable-next-line no-return-assign
-    .catch((error) => output.textContent = `Your alarm couldn't be set: ${error}`);
-};
-btn.addEventListener('click', amsha);
+music.addEventListener('ended', () => {
+  btn.setAttribute('id', 'pause');
+  btn.textContent = 'Play';
+});
+
+audioSource.connect(ngoma.destination);

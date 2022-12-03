@@ -2,4 +2,105 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  width: 100vw;
+}
+
+body {
+  height: 100vh;
+}
+
+.omejo {
+  border: 10px solid green;
+  background-color: rgba(167, 175, 231, 0.693);
+}
+
+// img {
+//   transform: translateX(300%);
+// }
+
+#btn {
+  background: #369;
+  padding: 8px;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  transition: 2s ease-in-out;
+}
+
+#btn:hover {
+  background: green;
+  color: red;
+  transform: rotateZ(360deg);
+}
+
+.sky {
+  height: 30vh;
+  background: skyblue;
+}
+
+.grass {
+  height: 30vh;
+  background: green;
+}
+
+.road {
+  height: 25vh;
+  background: #333;
+  position: relative;
+}
+
+.lines {
+  border: 5px dashed #fff;
+  position: absolute;
+  top: 50%;
+}
+
+.bike {
+  width: 80px;
+  position: absolute;
+  top: -25%;
+  left: 10px;
+  // animation-name: drive;
+  // animation-duration: 4s;
+  // animation-fill-mode: both;
+  // animation-iteration-count: infinite;
+  // animation-timing-function: linear;
+
+  animation: drive 4s both infinite linear,
+              jump 1s 1s;
+}
+
+.luigi {
+  width: 80px;
+  position: absolute;
+  top: 25%;
+  transform: rotate3d(1, 1, 1, 80deg);
+  animation-name: drive;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: linear;
+}
+
+@keyframes drive {
+  from{ transform: translateX(-100px);}
+  to{transform: translateX(100vw);}
+}
+
+@keyframes jump {
+  0% { top: -25% }
+  50% { top: -40% }
+  100% { top: -25% }
+}
+
+.audio {
+  height: 200px;
+}
+
+#play {
+  padding: 15px;
+  font-size: 2rem;
+  background-color: red;
 }
