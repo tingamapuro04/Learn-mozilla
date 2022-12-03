@@ -94,3 +94,13 @@ body {
   50% { top: -40% }
   100% { top: -25% }
 }
+
+.audio {
+  height: 200px;
+}
+
+#play {
+  padding: 15px;
+  font-size: 2rem;
+  background-color: red;
+}

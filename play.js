@@ -69,3 +69,14 @@
 //     .catch((error) => output.textContent = `Your alarm couldn't be set: ${error}`);
 // };
 // btn.addEventListener('click', amsha);
+
+const audioContext = window.audioContext || window.webkitAudioContext;
+const ngoma = new AudioContext();
+const btn = document.querySelector('#pause');
+const music = document.querySelector('#music');
+const atam = document.querySelector('#atam');
+const audioSource = ngoma.createMediaElementSource(music);
+
+btn.addEventListener('click', () => {
+  
+})
