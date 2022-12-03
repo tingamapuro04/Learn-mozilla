@@ -78,5 +78,24 @@ const atam = document.querySelector('#atam');
 const audioSource = ngoma.createMediaElementSource(music);
 
 btn.addEventListener('click', () => {
-  
-})
+  if (ngoma.state === 'suspended') {
+    ngoma.resume();
+  }
+
+  if (btn.getAttribute('id') === 'pause') {
+    music.play();
+    btn.setAttribute('id', 'playing');
+    btn.textContent = 'Pause'
+  } else if (btn.getAttribute('id') === 'playing') {
+    music.pause();
+    btn.setAttribute('id', 'pause');
+    btn.textContent = 'Play'
+  }
+});
+
+music.addEventListener('ended', () => {
+  btn.setAttribute('id', 'pause');
+  btn.textContent = 'Play';
+});
+
+const gainNode = audioCtx.createGain();
