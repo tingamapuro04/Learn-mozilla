@@ -70,11 +70,10 @@
 // };
 // btn.addEventListener('click', amsha);
 
-const audioContext = window.audioContext || window.webkitAudioContext;
+// const audioContext = window.audioContext || window.webkitAudioContext;
 const ngoma = new AudioContext();
 const btn = document.querySelector('#pause');
 const music = document.querySelector('#music');
-const atam = document.querySelector('#atam');
 const audioSource = ngoma.createMediaElementSource(music);
 
 btn.addEventListener('click', () => {
@@ -85,11 +84,11 @@ btn.addEventListener('click', () => {
   if (btn.getAttribute('id') === 'pause') {
     music.play();
     btn.setAttribute('id', 'playing');
-    btn.textContent = 'Pause'
+    btn.textContent = 'Pause';
   } else if (btn.getAttribute('id') === 'playing') {
     music.pause();
     btn.setAttribute('id', 'pause');
-    btn.textContent = 'Play'
+    btn.textContent = 'Play';
   }
 });
 
@@ -98,4 +97,4 @@ music.addEventListener('ended', () => {
   btn.textContent = 'Play';
 });
 
-const gainNode = audioCtx.createGain();
+audioSource.connect(ngoma.destination);
